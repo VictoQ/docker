@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My first dynamic Website</title>
+    <title>Titanic Page</title>
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
 </head>
 
@@ -19,14 +19,12 @@
         </nav>
     </header>
     <main>
-        <h1>I have been seen {{ count }} times.</h1>
-        <ul>
-            {% for i in range(1, count+1) %}
-            <li>{{ i }}: Hello {{ name }}! </li>
-            {% endfor %}
-        </ul>
-        <img src="{{ url_for('static', filename='hwr_logo.png') }}" alt="HWR Berlin Logo">
-        <p>Visit <a href="https://www.hwr-berlin.de/en/">HWR Berlin homepage</a></p>
+        <h1>Titanic Data</h1>
+        <!-- Display the loaded Titanic data as HTML table -->
+        {{ table | safe }}
+
+        <!-- Display the bar chart image -->
+        <img src="{{ url_for('static', filename=chart_path) }}" alt="Survivors by Gender">
     </main>
     <footer>
         My name is Victor Barbay
